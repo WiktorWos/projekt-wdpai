@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Poller+One');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(to right, #f5c20c, #fff07d);
+    margin: 0;
+    height: 100%;
+}
+
+#appTitle {
+    font-family: 'Poller One', sans-serif;
+    max-height: 200px;
+    cursor: default;
+    margin-bottom: 2.5vh;
+}
+#appTitle>h1 {
+    font-size: 40px;
+    color: black;
+    font-weight: 500;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    height: 70%;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContent {
+    background-color: #fff;
+    padding: 30px 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    overflow: scroll;
+    z-index: 9;
+}
+
+button {
+    padding: 20px;
+    width: 130px;
+    border: 1px solid #eee;
+    border-radius: 50px;
+    color: #333;
+    cursor: pointer;
+    background-color: #fff07d;
+    border: unset;
+    align-self: center;
+    margin-top: 15px;
+    transition: background .5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    background-color: #f5c20c;
+}
+
+.formContent>header {
+  text-align: center;
+}
+
+.formContent>header>h1 {
+    margin-top: 0;
+    font-size: 250%;
+}
+
+.login-form {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 240px;
+}
+
+.input-group>input {
+    padding: 20px;
+    font-size: 13px;
+    border: 1px solid #e4eff8;
+    background-color: #e4eff8;
+    border-radius: 50px;  
+}
+
+.input-group>input:focus {
+    outline: 0;
+    border-color: #fff07d;
+}
+
+.input-group>label {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 3px;
+    margin-left: 16px;
+}
+
+@media only screen and (min-width: 530px) {
+  .formContent {
+    min-width: 480px;
+  }
+  button{
+    width: 150px;
+  }
+  .input-group {
+    max-width: 310px;
+  }
+
+  #appTitle>h1 {
+    font-size: calc(49px + 2vw);
+    /* min-font-size: 60px; */
+  }
+}
