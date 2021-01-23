@@ -6,26 +6,23 @@ body {
     background: linear-gradient(to right, #f5c20c, #fff07d);
     margin: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#appTitle {
+.appTitle {
     font-family: 'Poller One', sans-serif;
     max-height: 200px;
     cursor: default;
     margin-bottom: 2.5vh;
 }
-#appTitle>h1 {
+.appTitle>h1 {
     font-size: 40px;
     color: black;
     font-weight: 500;
     position: relative;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .wrapper {
@@ -112,19 +109,23 @@ button:hover {
     margin-left: 16px;
 }
 
-@media only screen and (min-width: 530px) {
-  .formContent {
-    min-width: 480px;
-  }
-  button{
-    width: 150px;
-  }
-  .input-group {
-    max-width: 310px;
-  }
+.hide {
+    display: none;
+}
 
-  #appTitle>h1 {
-    font-size: calc(49px + 2vw);
-    /* min-font-size: 60px; */
-  }
+@media only screen and (min-width: 530px) {
+    .formContent {
+        min-width: 480px;
+    }
+    button{
+        width: 150px;
+    }
+    .input-group {
+        max-width: 310px;
+    }
+
+    .appTitle>h1 {
+        font-size: calc(49px + 2vw);
+        /* min-font-size: 60px; */
+    }
 }

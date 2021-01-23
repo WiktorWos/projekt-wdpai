@@ -1,0 +1,122 @@
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 15px;
+    border-radius: 10px;
+    /* width: 100%; */
+    width: 300px;
+    overflow: scroll;
+    z-index: 9;
+}
+
+.userDetails>hr {
+    width: 80%;
+}
+
+.addTicketButton {
+    width: 200px;
+    font-size: 18px;
+    /* background-color: #fff; */
+}
+
+.myTickets {
+    margin-top: 30px;
+    width: 320px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.addTicket {
+    margin-top: 5px;
+}
+
+.myTickets>hr {
+    width: 80%;
+    border: none;
+    height: 1px;
+    background-color: #333;
+}
+
+.title {
+    font-size: 36px;
+    margin: auto;
+}
+
+#profileIcon {
+    font-size: 100px;
+    padding-bottom: 10px;
+}
+
+.ticket {
+    background-color: #fff;
+    padding-top: 10px;
+    width: 250px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #333;
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticketIconDiv {
+    margin-right: 20px;
+    height: 100%;
+    vertical-align: top;
+}
+
+#ticketIcon {
+    font-size: 60px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 530px) {
+    .userInfo {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .userDetails {
+        margin-right: 10vw;
+    }
+
+    .tickets {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .ticket {
+        margin: 20px 0;
+        min-width: 170px;
+        max-width: 170px;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+
+    .ticketIconDiv {
+        margin: 0;
+    }
+
+    .myTickets {
+        width: 500px;
+    }
+
+    .detailsDesktop {
+        display: flex;
+        flex-direction: column;
+    }
+}
