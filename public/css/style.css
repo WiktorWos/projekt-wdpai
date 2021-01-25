@@ -89,12 +89,16 @@ button:hover {
   max-width: 240px;
 }
 
-.input-group>input {
+.input-group>input, select {
     padding: 20px;
     font-size: 13px;
     border: 1px solid #e4eff8;
     background-color: #e4eff8;
     border-radius: 50px;  
+}
+
+select {
+    padding: 15px;
 }
 
 .input-group>input:focus {
