@@ -15,10 +15,20 @@
                 <h1> Sign In </h1>
             </header>
             <section class="formSection">
-                <form class="login-form">
+                <form class="login-form" action="login" method="POST">
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
                     <div class="input-group">
                         <label for="email">Email</label>
                         <input
+                            name="email"
                             type="text"
                             placeholder="Email"
                             id="email"
@@ -27,6 +37,7 @@
                     <div class="input-group">
                         <label for="password">Password</label>
                         <input
+                            name="password"
                             type="password"
                             placeholder="Password"
                             id="password"
