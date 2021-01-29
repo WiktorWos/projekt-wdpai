@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/profile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script type="text/javascript" src="/public/js/populateTickets.js" defer></script>
+    <script type="text/javascript" src="/public/js/populateProfileData.js" defer></script>
     <title>LOGIN PAGE</title>
 </head>
 
@@ -18,11 +18,11 @@
 
         <div class="userDetails">
             <span class="material-icons" id="profileIcon"> account_circle </span>
-            <label>John</label>
+            <label id="name"></label>
             <hr>
-            <label>Doe</label>
+            <label id="lastname"></label>
             <hr>
-            <label>johndoe@mail.com</label>
+            <label id="usersEmail"></label>
             <hr>
             <div class="addTicket">
                 <button class="addTicketButton" id="buttonAdd">Add new ticket</button>
@@ -37,81 +37,27 @@
         <div class="myTickets">
             <label class="title">My tickets</label>
             <hr>
-            <div class="tickets">
-                <div class="ticket">
-                    <div class="ticketIconDiv">
-                        <span class="material-icons" id="ticketIcon">
-                                confirmation_number
-                        </span>
-                    </div>
-                    <div class="ticketDetails">
-                        <label>From: Warszawa</label>
-                        <hr>
-                        <label>To: Kraków</label>
-                        <hr>
-                        <label>10.01.2021 11:30</label>
-                        <hr>
-                        <label>Type: STUDENT</label>
-                        <hr>
-                    </div>
-                </div>
-    
-                <div class="ticket">
-                    <div class="ticketIconDiv">
-                        <span class="material-icons" id="ticketIcon">
-                                    confirmation_number
-                        </span>
-                    </div>
-                    <div class="ticketDetails">
-                        <label>From: Warszawa</label>
-                        <hr>
-                        <label>To: Kraków</label>
-                        <hr>
-                        <label>10.01.2021 11:30</label>
-                        <hr>
-                        <label>Type: STUDENT</label>
-                        <hr>
-                    </div>
-                </div>
-
-                <!-- <div class="ticket">
-                    <div class="ticketIconDiv">
-                        <span class="material-icons" id="ticketIcon">
-                                    confirmation_number
-                        </span>
-                    </div>
-                    <div class="ticketDetails">
-                        <label>From: Warszawa</label>
-                        <hr>
-                        <label>To: Kraków</label>
-                        <hr>
-                        <label>10.01.2021 11:30</label>
-                        <hr>
-                        <label>Type: STUDENT</label>
-                        <hr>
-                    </div>
-                </div> -->
-
-                <!-- <div class="ticket">
-                    <div class="ticketIconDiv">
-                        <span class="material-icons" id="ticketIcon">
-                                    confirmation_number
-                        </span>
-                    </div>
-                    <div class="ticketDetails">
-                        <label>From: Warszawa</label>
-                        <hr>
-                        <label>To: Kraków</label>
-                        <hr>
-                        <label>10.01.2021 11:30</label>
-                        <hr>
-                        <label>Type: STUDENT</label>
-                        <hr>
-                    </div>
-                </div>
-            </div> -->
-            
-            
+            <div class="tickets" id="tickets">
         </div>
     </div>
 </body>
+
+<template id="ticketTemplate">
+    <div class="ticket">
+        <div class="ticketIconDiv">
+            <span class="material-icons" id="ticketIcon">
+                        confirmation_number
+            </span>
+        </div>
+        <div class="ticketDetails">
+            <label class="fromLabel"></label>
+            <hr>
+            <label class="toLabel"></label>
+            <hr>
+            <label class="dateLabel"></label>
+            <hr>
+            <label class="typeLabel"></label>
+            <hr>
+        </div>
+    </div>
+</template>

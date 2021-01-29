@@ -41,7 +41,7 @@ class ConnectionRepository extends Repository {
                 $schedule = new Schedule(self::DAYS[$connection['day_of_week']], $prevTimeStr);
                 $price = $timeDiff * $connection['price_per_km'];
                 $toCity = $connection['location'];
-                if($prevBusStopId == 1) {
+                if($prevBusStopId == $from) {
                     $result[] = new ConnectionDetails($prevId, $fromCity, $toCity, $timeDiff, $price, $schedule);
                 }
             } else {
