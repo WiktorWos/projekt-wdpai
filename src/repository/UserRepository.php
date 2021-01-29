@@ -25,4 +25,14 @@ class UserRepository extends Repository
             $user['password']
         );
     }
+
+    public function getLoggedUserDetails() {
+        $userId = 1;
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.users left join user_details ud on ud.id = users.details_id WHERE users.id = :id;
+        ');
+        $stmt->bindParam(':id', $userId, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

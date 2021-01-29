@@ -5,11 +5,13 @@ class Ticket
 {
     private $connectionDetails;
     private $type;
+    private $userId;
 
-    public function __construct($connectionDetails, $type)
+    public function __construct($connectionDetails, $type, $userId)
     {
         $this->connectionDetails = $connectionDetails;
         $this->type = $type;
+        $this->userId = $userId;
     }
 
     public function getConnectionDetails()
@@ -30,5 +32,15 @@ class Ticket
     public function setType($type): void
     {
         $this->type = $type;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserId($userId): void
+    {
+        $this->userId = $userId;
     }
 }

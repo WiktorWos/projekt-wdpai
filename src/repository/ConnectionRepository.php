@@ -54,4 +54,12 @@ class ConnectionRepository extends Repository {
         }
         return $result;
     }
+
+    public function getBusStops() {
+        $stmt = $this->database->connect()->prepare('
+            select * from bus_stops;
+        ');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

@@ -30,7 +30,18 @@
                     <div><?= $connection->getSchedule()->getDayOfWeek(); ?></div>
                     <div><?= $connection->getSchedule()->getDepartureTime(); ?></div>
                 </div>
-                <button>Book</button>
+                <div class="connectionInfoGroup">
+                    <form action="bookTicket" method="post">
+                        <input type="hidden" name="id" value="<?=$connection->getId();?>">
+                        <input type="hidden" name="fromCity" value="<?=$connection->getFrom();?>">
+                        <input type="hidden" name="price" value="<?=$connection->getPrice();?>">
+                        <input type="hidden" name="time" value="<?=$connection->getTime();?>">
+                        <input type="hidden" name="toCity" value="<?=$connection->getTo();?>">
+                        <input type="hidden" name="day" value="<?=$connection->getSchedule()->getDayOfWeek();?>">
+                        <input type="hidden" name="departure" value="<?=$connection->getSchedule()->getDepartureTime();?>">
+                        <button class="bookTicketBtn" type="submit">Book</button>
+                    </form>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>

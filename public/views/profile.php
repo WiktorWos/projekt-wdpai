@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/profile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="/public/js/populateTickets.js" defer></script>
     <title>LOGIN PAGE</title>
 </head>
 
@@ -113,6 +114,4 @@
             
         </div>
     </div>
-    
-          
 </body>

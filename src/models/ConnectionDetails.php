@@ -80,5 +80,7 @@ class ConnectionDetails
         $this->schedule = $schedule;
     }
 
-
+    public function getDetails() {
+        return $this;
+    }
 }
