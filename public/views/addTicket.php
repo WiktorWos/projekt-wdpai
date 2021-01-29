@@ -15,21 +15,22 @@
                 <h1> Search for connection </h1>
             </header>
             <section class="formSection">
-                <form class="login-form">
+                <form action="connectionList" class="login-form" method="post">
                     <div class="input-group">
-                        <label for="email">Email</label>
-                        
-                        <select></select>
+                        <label>From</label>
+                        <select name="from">
+                            <option value="1">Krakow</option>
+                            <option value="3">Warszawa</option>
+                        </select>
                     </div>
                     <div class="input-group">
-                        <label for="password">Password</label>
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            id="password"
-                        />
+                        <label>To</label>
+                        <select name="to">
+                            <option value="1">Krakow</option>
+                            <option value="3">Warszawa</option>
+                        </select>
                     </div>
-                    <div class="input-group"><button type="submit">Sign in</button></div>
+                    <div class="input-group"><button type="submit">Search</button></div>
                 </form>
             </section>
         </div>
