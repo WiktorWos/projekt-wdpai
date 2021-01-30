@@ -27,13 +27,27 @@ class ConnectionRepository extends Repository {
         $stmt->bindParam(':toId', $to, PDO::PARAM_STR);
         $stmt->execute();
         $connectionsContainingBothStops = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $this->getPreparedConnectionDetails($connectionsContainingBothStops, $from);
+        return $result;
+    }
+
+    public function getBusStops() {
+        $stmt = $this->database->connect()->prepare('
+            select * from bus_stops;
+        ');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    private function getPreparedConnectionDetails($connections, $from) {
         $prevId = 0;
+        $result = [];
         $prevBusStopId = -1;
         $prevTimeStr = '';
         $prevTime = strtotime('now');
         $fromCity = '';
         $toCity = '';
-        foreach ($connectionsContainingBothStops as $connection) {
+        foreach ($connections as $connection) {
             if($connection['id'] == $prevId) {
                 $currTime = strtotime($connection['departure']);
                 $timeDiff = round(abs($currTime - $prevTime) / 60,2);
@@ -53,13 +67,5 @@ class ConnectionRepository extends Repository {
             }
         }
         return $result;
-    }
-
-    public function getBusStops() {
-        $stmt = $this->database->connect()->prepare('
-            select * from bus_stops;
-        ');
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
