@@ -15,6 +15,9 @@ Router::post('bookTicket', 'ProfileController');
 Router::get('getTickets', 'ProfileController');
 Router::get('getBusStops', 'ConnectionController');
 Router::get('getUserDetails', 'ProfileController');
+Router::post('addUser', 'SecurityController');
+Router::get('register', 'SecurityController');
+//Router::post('logout', 'SecurityController');
 
 
 Router::run($path);

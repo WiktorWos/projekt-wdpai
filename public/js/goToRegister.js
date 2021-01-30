@@ -1,0 +1,1 @@
+document.getElementById("goToRegisterBtn").onclick = () => location.href = 'http://localhost:8080/register';

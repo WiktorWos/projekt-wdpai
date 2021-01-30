@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 <head>
@@ -27,18 +30,15 @@
             <div class="addTicket">
                 <button class="addTicketButton" id="buttonAdd">Add new ticket</button>
             </div>
+            <div class="addTicket">
+                <a href="logout.php">Logout</a>
+            </div>
         </div>
-
-    
-<!--        <div class="addTicket hide">-->
-<!--            <button class="addTicketButton" id="buttonAdd">Add new ticket</button>-->
-<!--        </div>-->
     
         <div class="myTickets">
             <label class="title">My tickets</label>
             <hr>
-            <div class="tickets" id="tickets">
-        </div>
+            <div class="tickets" id="tickets"></div>
     </div>
 </body>
 

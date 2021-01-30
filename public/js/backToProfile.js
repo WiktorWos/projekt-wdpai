@@ -1,0 +1,1 @@
+document.getElementById("backToProfileBtn").onclick = () => location.href = 'http://localhost:8080/profile';

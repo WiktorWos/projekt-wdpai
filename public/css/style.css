@@ -135,13 +135,32 @@ select {
     margin-top: 0;
 }
 
+.btnGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.loginBtn {
+    width:120px;
+    margin: 15px 5px;
+}
 
+a {
+    outline: none;
+    color: black;
+}
 @media only screen and (min-width: 530px) {
-    .formContent, .connection{
+    .formContent{
         min-width: 480px;
+    }
+    .connection {
+        min-width: 510px;
     }
     button{
         width: 150px;
+    }
+    .loginBtn {
+        width:140px;
     }
     .input-group {
         max-width: 310px;

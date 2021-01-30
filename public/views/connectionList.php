@@ -2,7 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <title>LOGIN PAGE</title>
+    <title>CONNECTIONS</title>
+    <script type="text/javascript" src="/public/js/backToProfile.js" defer></script>
 </head>
 
 <body>
@@ -14,6 +15,7 @@
             <header>
                 <h1> Available Connections </h1>
             </header>
+            <button id="backToProfileBtn">Back to profile</button>
         </div>
 
         <?php foreach ($connections as $connection): ?>

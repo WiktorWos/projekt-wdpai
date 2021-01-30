@@ -1,7 +1,11 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script type="text/javascript" src="/public/js/goToRegister.js" defer></script>
     <title>LOGIN PAGE</title>
 </head>
 
@@ -12,7 +16,10 @@
     <div class="wrapper">
         <div class="formContent">
             <header>
-                <h1> Sign In </h1>
+                <div class="btnGroup">
+                    <h1> Sign In / </h1>
+                    <button id="goToRegisterBtn" class="loginBtn">Register</button>
+                </div>
             </header>
             <section class="formSection">
                 <form class="login-form" action="login" method="POST">
@@ -43,7 +50,10 @@
                             id="password"
                         />
                     </div>
-                    <div class="input-group"><button type="submit">Sign in</button></div>
+
+                    <div class="btnGroup">
+                        <button type="submit" class="loginBtn">Sign in</button>
+                    </div>
                 </form>
             </section>
         </div>
