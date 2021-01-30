@@ -32,6 +32,7 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
         $_SESSION['userId'] = $user->getId();
+        $_SESSION['loggedIn'] = true;
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/profile");
     }
@@ -59,8 +60,4 @@ class SecurityController extends AppController {
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }
 
-//    public function logout() {
-//        $url = "http://$_SERVER[HTTP_HOST]";
-//        header("Location: {$url}/");
-//    }
 }

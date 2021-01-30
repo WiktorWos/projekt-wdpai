@@ -32,4 +32,16 @@ class AppController {
         }
         print $output;
     }
+
+    protected function renderIfLoggedIn($template) {
+        if(isset($_SESSION) and $_SESSION['loggedIn']) {
+            $this->render($template);
+        } else {
+            $this->render('login', ['messages' => ['Youre not logged in']]);
+        }
+    }
+
+    protected function isLoggedIn() {
+        return isset($_SESSION) and $_SESSION['loggedIn'];
+    }
 }

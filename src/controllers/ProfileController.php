@@ -31,16 +31,22 @@ class ProfileController extends AppController
 
         $this->ticketRepository->addTicket($ticket);
 
-        $this->render('profile', ['messages' => []]);
+        $this->renderIfLoggedIn('profile');
     }
 
     public function getTickets() {
+        if(!$this->isLoggedIn()) {
+            return $this->render('login', ['messages' => ['Youre not logged in']]);
+        }
         header('Content-type: application/json');
         http_response_code(200);
         echo json_encode($this->ticketRepository->getUsersTickets());
     }
 
     public function getUserDetails() {
+        if(!$this->isLoggedIn()) {
+            return $this->render('login', ['messages' => ['Youre not logged in']]);
+        }
         header('Content-type: application/json');
         http_response_code(200);
         echo json_encode($this->userRepository->getLoggedUserDetails());

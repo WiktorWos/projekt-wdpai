@@ -11,11 +11,11 @@ class DefaultController extends AppController {
 
     public function profile()
     {
-        $this->render('profile');
+        $this->renderIfLoggedIn('profile');
     }
 
     public function addTicket()
     {
-        $this->render('addTicket');
+        $this->renderIfLoggedIn('addTicket');
     }
 }

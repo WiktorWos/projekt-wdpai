@@ -17,6 +17,9 @@ class ConnectionController extends AppController
     }
 
     public function connectionList() {
+        if(!$this->isLoggedIn()) {
+            return $this->render('login', ['messages' => ['Youre not logged in']]);
+        }
         $from = $_POST['from'];
         $to = $_POST['to'];
         $connections = $this->connectionRepository->getConnectionsByCities($from, $to);
@@ -24,6 +27,9 @@ class ConnectionController extends AppController
     }
 
     public function getBusStops() {
+        if(!$this->isLoggedIn()) {
+            return $this->render('login', ['messages' => ['Youre not logged in']]);
+        }
         header('Content-type: application/json');
         http_response_code(200);
         echo json_encode($this->connectionRepository->getBusStops());
