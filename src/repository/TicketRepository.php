@@ -26,7 +26,7 @@ class TicketRepository extends Repository
     }
 
     public function getUsersTickets() {
-        $userId = 1;
+        $userId = $_SESSION['userId'];
 
         $stmt = $this->database->connect()->prepare('
             select * from tickets where user_id = :id;

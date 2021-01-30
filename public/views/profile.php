@@ -30,9 +30,9 @@
         </div>
 
     
-        <div class="addTicket hide">
-            <button class="addTicketButton" id="buttonAdd">Add new ticket</button>
-        </div>
+<!--        <div class="addTicket hide">-->
+<!--            <button class="addTicketButton" id="buttonAdd">Add new ticket</button>-->
+<!--        </div>-->
     
         <div class="myTickets">
             <label class="title">My tickets</label>

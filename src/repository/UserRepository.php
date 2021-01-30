@@ -21,13 +21,14 @@ class UserRepository extends Repository
         }
 
         return new User(
+            $user['id'],
             $user['email'],
             $user['password']
         );
     }
 
     public function getLoggedUserDetails() {
-        $userId = 1;
+        $userId = $_SESSION['userId'];
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users left join user_details ud on ud.id = users.details_id WHERE users.id = :id;
         ');

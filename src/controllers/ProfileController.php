@@ -26,7 +26,7 @@ class ProfileController extends AppController
         $time = $_POST['time'];
         $schedule = new Schedule($day, $departure);
         $connection = new ConnectionDetails($id, $from, $to, $time, $price, $schedule);
-        $userId = 1;
+        $userId = $_SESSION['userId'];
         $ticket = new Ticket($connection, 'NORMAL', $userId);
 
         $this->ticketRepository->addTicket($ticket);

@@ -1,6 +1,7 @@
 const ticketContainer = document.getElementById("tickets")
 
 window.onload = function() {
+    document.getElementById("buttonAdd").onclick = () => location.href = 'http://localhost:8080/addTicket';
     fetchTickets();
     fetchUserDetails();
 }
