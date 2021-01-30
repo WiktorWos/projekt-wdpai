@@ -7,13 +7,16 @@ require_once __DIR__ . '/../models/Ticket.php';
 class TicketRepository extends Repository
 {
     public function addTicket($ticket) {
-        $stmt = $this->database->connect()->prepare('
+        $conn = $this->database->connect();
+        $stmt = $conn->prepare('
             INSERT INTO tickets (from_location, to_location, type, price, time, date, user_id)
             VALUES (?, ?, ?, ?, ?, ?, ?);
         ');
 
         $connectionDetails = $ticket->getConnectionDetails();
         $schedule = $connectionDetails->getSchedule();
+
+        $conn->beginTransaction();
         $stmt->execute([
             $connectionDetails->getFrom(),
             $connectionDetails->getTo(),
@@ -23,6 +26,7 @@ class TicketRepository extends Repository
             $schedule->getDayOfWeek(),
             $ticket->getUserId()
         ]);
+        $conn->commit();
     }
 
     public function getUsersTickets() {
